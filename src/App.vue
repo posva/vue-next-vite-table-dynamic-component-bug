@@ -5,7 +5,10 @@
         <router-link to="/">Index</router-link>
       </li>
       <li>
-        <router-link to="/table">Cart</router-link>
+        <router-link to="/not-table">Not Table</router-link>
+      </li>
+      <li>
+        <router-link to="/table">Table</router-link>
       </li>
     </ul>
   </nav>

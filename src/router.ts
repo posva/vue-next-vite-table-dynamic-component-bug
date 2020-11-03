@@ -10,6 +10,11 @@ const routes: RouteRecordRaw[] = [
         path: '/table',
         name: 'Table',
         component: () => import('./views/Table.vue')
+    },
+    {
+        path: '/not-table',
+        name: 'NotTable',
+        component: () => import('./views/NotTable.vue')
     }
 ];
 
