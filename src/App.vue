@@ -1,27 +1,28 @@
 <template>
-  <nav>
-    <ul>
-      <li>
-        <router-link to="/">Index</router-link>
-      </li>
-      <li>
-        <router-link to="/not-table">Not Table</router-link>
-      </li>
-      <li>
-        <router-link to="/table">Table</router-link>
-      </li>
-    </ul>
-  </nav>
+  <ul>
+    <li><button @click="view = 'Index'">Index</button></li>
+    <li><button @click="view = 'Table'">Table</button></li>
+  </ul>
+
+  {{ view }}
 
   <main>
-    <router-view></router-view>
+    <component :is="view"></component>
   </main>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue"
+<script>
+import { ref } from 'vue'
+import Index from './views/Index.vue'
+import Table from './views/Table.vue'
 
-export default defineComponent({
+export default {
   name: 'App',
-})
+  components: { Index, Table },
+  setup() {
+    const view = ref('Index')
+
+    return { view }
+  },
+}
 </script>
